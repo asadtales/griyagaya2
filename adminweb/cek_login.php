@@ -5,8 +5,8 @@ function antiinjection($data){
   return $filter_sql;
 }
 
-$username = ($_POST[username]);
-$pass     = (md5($_POST[password]));
+$username = $_POST[username];
+$pass     = $_POST[password];
 
 $login=mysql_query("SELECT * FROM admins WHERE username='$username' AND password='$pass' AND blokir='N'");
 $ketemu=mysql_num_rows($login);
